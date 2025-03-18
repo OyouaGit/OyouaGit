@@ -5,8 +5,6 @@ body {
 
 /* Hero Section */
 .hero {
-  /* Correction de la superposition */
-.hero {
   padding-top: 100px; 
   background: url('background.jpg') no-repeat center center/cover;
   height: 50vh;
