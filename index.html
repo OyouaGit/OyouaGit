@@ -28,83 +28,83 @@
     </div>
   </nav>
 
-  <!-- Hero Section -->
-  <header class="hero">
-    <div class="container text-center text-white">
-      <h1 class="display-4">Bienvenue sur mon site !</h1>
-      <p class="lead">Étudiant en économie, passionné par l’analyse financière et la recherche.</p>
+  <!-- Chatbot -->
+  <div id="chatbot-container">
+    <div id="chatbot-header">
+      <p>💬 Pose-moi une question</p>
+      <button id="close-chatbot">✖</button>
     </div>
-  </header>
-
-  <!-- Section À Propos -->
-  <section id="about" class="container py-5">
-    <h2 class="text-center">À Propos de Moi</h2>
-    <div class="row justify-content-center">
-      <div class="col-md-6 text-center">
-        <p>Je suis étudiant en économie, passionné par l'analyse financière et les stratégies d'investissement. Ce site présente mes projets et mon parcours.</p>
-      </div>
+    <div id="chatbot-messages"></div>
+    <div id="chatbot-options">
+      <p>Choisis une catégorie :</p>
+      <button class="chatbot-btn" onclick="showQuestions('general')">📌 Informations générales</button>
+      <button class="chatbot-btn" onclick="showQuestions('etudes')">📚 Études & Compétences</button>
+      <button class="chatbot-btn" onclick="showQuestions('projets')">📊 Projets & Analyses</button>
+      <button class="chatbot-btn" onclick="showQuestions('contact')">📩 Contact & Liens</button>
     </div>
-  </section>
+  </div>
 
-  <!-- Section CV -->
-  <section id="cv" class="bg-light py-5 text-center">
-    <div class="container">
-      <h2>Mon CV</h2>
-      <a href="CV_Master_FR.pdf" class="btn btn-lg btn-primary mt-3" target="_blank">
-        <i class="fas fa-download"></i> Télécharger mon CV
-      </a>
-    </div>
-  </section>
+  <!-- Bouton pour ouvrir le chatbot -->
+  <button id="open-chatbot">💬 Chat</button>
 
-  <!-- Section Projets -->
-  <section id="projets" class="container py-5">
-    <h2 class="text-center">Mes Projets</h2>
-    <div class="row">
-      <div class="col-md-6">
-        <div class="card">
-          <div class="card-body text-center">
-            <h5 class="card-title">Analyse Financière</h5>
-            <p class="card-text">Projet d'analyse approfondie de performance financière.</p>
-            <a href="Analyse_financiere_AAPL.html" class="btn btn-outline-dark" target="_blank">Voir le projet</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="card">
-          <div class="card-body text-center">
-            <h5 class="card-title">Dossier RF</h5>
-            <p class="card-text">Etude sur les comportements électoraux lors du premier tour de l’élection présidentielle française de 2022.</p>
-            <a href="DossierRF.html" class="btn btn-outline-dark" target="_blank">Voir le projet</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Section Contact -->
-  <section id="contact" class="bg-light py-5 text-center">
-    <h2>Contact</h2>
-    <p>Vous pouvez me contacter par e-mail :</p>
-    <a href="mailto:ingrid.oyoua@gmail.com" class="btn btn-success">
-      <i class="fas fa-envelope"></i> Envoyer un e-mail
-    </a>
-  </section>
-
-  <!-- Footer -->
-  <footer class="text-center bg-dark text-white py-3">
-    <p>Créé avec GitHub Pages</p>
-  </footer>
-
-  <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Script du chatbot -->
   <script>
-    window.addEventListener("scroll", function() {
-      let navbar = document.querySelector(".navbar");
-      if (window.scrollY > 50) {
-        navbar.classList.add("shadow");
-      } else {
-        navbar.classList.remove("shadow");
+    document.addEventListener("DOMContentLoaded", function() {
+      const chatbotContainer = document.getElementById("chatbot-container");
+      const openChatbot = document.getElementById("open-chatbot");
+      const closeChatbot = document.getElementById("close-chatbot");
+      const chatbotMessages = document.getElementById("chatbot-messages");
+
+      const questions = {
+        "general": [
+          { text: "Qui es-tu ?", response: "Je suis un chatbot intégré à ce site pour répondre à tes questions !" },
+          { text: "Présente-toi en une phrase", response: "Je suis étudiant en économie, spécialisé en finance et économétrie." },
+          { text: "Quel est l'objectif de ce site ?", response: "Ce site sert à présenter mon parcours, mes projets et mes analyses économiques." },
+          { text: "Que propose ce site ?", response: "Vous y trouverez mon CV, mes projets, mes contacts et des ressources utiles." }
+        ],
+        "etudes": [
+          { text: "Quel est ton domaine d’étude ?", response: "J'étudie l'économie avec une spécialisation finance." },
+          { text: "Quelle université as-tu fréquentée ?", response: "J’ai étudié à Tours." },
+          { text: "Quelles sont tes principales compétences ?", response: "Mes compétences incluent l'analyse de données, l'économétrie et la programmation (Python, R), la finance." },
+          { text: "Quels logiciels ou langages de programmation utilises-tu ?", response: "J'utilise Python, R, Stata et Excel pour mes analyses." }
+        ],
+        "projets": [
+          { text: "Quels sont tes projets en économie ?", response: "J’ai travaillé sur des analyses financières et des études électorales." },
+          { text: "Peux-tu expliquer ton projet sur l’analyse financière ?", response: "Mon projet en analyse financière porte sur l'évaluation de la performance grâce à des instruments." },
+          { text: "Peux-tu expliquer ton projet sur les comportements électoraux ?", response: "Cette étude examine l’impact de la taille des communes sur la participation électorale en 2022." },
+          { text: "Où puis-je voir tes projets ?", response: "Mes projets sont visibles dans la section 'Projets' de mon site." }
+        ],
+        "contact": [
+          { text: "Comment puis-je te contacter ?", response: "Tu peux m’envoyer un e-mail à : <a href='mailto:ingrid.oyoua@gmail.com'>ingrid.oyoua@gmail.com</a>" },
+          { text: "Peux-tu partager ton LinkedIn ?", response: "Bien sûr ! Voici mon profil LinkedIn : <a href='https://www.linkedin.com/in/ingrid-oyoua-928b12353/' target='_blank'>Mon LinkedIn</a>." },
+          { text: "Peux-tu partager ton CV ?", response: "<a href='CV_Master_FR.pdf' target='_blank'>Clique ici pour voir mon CV</a>." }
+        ]
+      };
+
+      function showQuestions(category) {
+        chatbotMessages.innerHTML = "";
+        questions[category].forEach(q => {
+          let btn = document.createElement("button");
+          btn.classList.add("chatbot-btn");
+          btn.innerText = q.text;
+          btn.onclick = () => showResponse(q.response);
+          chatbotMessages.appendChild(btn);
+        });
       }
+
+      function showResponse(response) {
+        chatbotMessages.innerHTML = `<p>${response}</p>`;
+      }
+
+      openChatbot.addEventListener("click", function() {
+        chatbotContainer.style.display = "block";
+        openChatbot.style.display = "none";
+      });
+
+      closeChatbot.addEventListener("click", function() {
+        chatbotContainer.style.display = "none";
+        openChatbot.style.display = "block";
+      });
     });
   </script>
 
