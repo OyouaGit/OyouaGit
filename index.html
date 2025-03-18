@@ -28,6 +28,32 @@
     </div>
   </nav>
 
+  <!-- Section Hero -->
+  <header class="hero">
+    <div class="container text-center text-white">
+      <h1 class="display-4">Bienvenue sur mon site !</h1>
+      <p class="lead">Étudiant en économie, passionné par l’analyse financière et la recherche.</p>
+    </div>
+  </header>
+
+  <!-- Section À Propos -->
+  <section id="about" class="container py-5">
+    <h2 class="text-center">À Propos de Moi</h2>
+    <p class="text-center">Je suis étudiant en économie, spécialisé en finance et économétrie. Mon site présente mes projets, analyses et expériences.</p>
+  </section>
+
+  <!-- Section Projets -->
+  <section id="projets" class="container py-5">
+    <h2 class="text-center">Mes Projets</h2>
+    <p class="text-center">Découvrez mes travaux en analyse financière et en économie.</p>
+  </section>
+
+  <!-- Section Contact -->
+  <section id="contact" class="container py-5">
+    <h2 class="text-center">Contact</h2>
+    <p class="text-center">Vous pouvez me contacter par e-mail : <a href="mailto:ingrid.oyoua@gmail.com">ingrid.oyoua@gmail.com</a></p>
+  </section>
+
   <!-- Chatbot -->
   <div id="chatbot-container">
     <div id="chatbot-header">
@@ -36,8 +62,7 @@
     </div>
     <div id="chatbot-messages"></div>
     <div id="chatbot-options">
-      <p>Choisis une catégorie :</p>
-      <button class="chatbot-btn" onclick="showQuestions('general')">📌 Informations générales</button>
+      <p>Choisissez une catégorie :</p>
       <button class="chatbot-btn" onclick="showQuestions('etudes')">📚 Études & Compétences</button>
       <button class="chatbot-btn" onclick="showQuestions('projets')">📊 Projets & Analyses</button>
       <button class="chatbot-btn" onclick="showQuestions('contact')">📩 Contact & Liens</button>
@@ -48,65 +73,7 @@
   <button id="open-chatbot">💬 Chat</button>
 
   <!-- Script du chatbot -->
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      const chatbotContainer = document.getElementById("chatbot-container");
-      const openChatbot = document.getElementById("open-chatbot");
-      const closeChatbot = document.getElementById("close-chatbot");
-      const chatbotMessages = document.getElementById("chatbot-messages");
-
-      const questions = {
-        "general": [
-          { text: "Qui es-tu ?", response: "Je suis un chatbot intégré à ce site pour répondre à tes questions !" },
-          { text: "Présente-toi en une phrase", response: "Je suis étudiant en économie, spécialisé en finance et économétrie." },
-          { text: "Quel est l'objectif de ce site ?", response: "Ce site sert à présenter mon parcours, mes projets et mes analyses économiques." },
-          { text: "Que propose ce site ?", response: "Vous y trouverez mon CV, mes projets, mes contacts et des ressources utiles." }
-        ],
-        "etudes": [
-          { text: "Quel est ton domaine d’étude ?", response: "J'étudie l'économie avec une spécialisation finance." },
-          { text: "Quelle université as-tu fréquentée ?", response: "J’ai étudié à Tours." },
-          { text: "Quelles sont tes principales compétences ?", response: "Mes compétences incluent l'analyse de données, l'économétrie et la programmation (Python, R), la finance." },
-          { text: "Quels logiciels ou langages de programmation utilises-tu ?", response: "J'utilise Python, R, Stata et Excel pour mes analyses." }
-        ],
-        "projets": [
-          { text: "Quels sont tes projets en économie ?", response: "J’ai travaillé sur des analyses financières et des études électorales." },
-          { text: "Peux-tu expliquer ton projet sur l’analyse financière ?", response: "Mon projet en analyse financière porte sur l'évaluation de la performance grâce à des instruments." },
-          { text: "Peux-tu expliquer ton projet sur les comportements électoraux ?", response: "Cette étude examine l’impact de la taille des communes sur la participation électorale en 2022." },
-          { text: "Où puis-je voir tes projets ?", response: "Mes projets sont visibles dans la section 'Projets' de mon site." }
-        ],
-        "contact": [
-          { text: "Comment puis-je te contacter ?", response: "Tu peux m’envoyer un e-mail à : <a href='mailto:ingrid.oyoua@gmail.com'>ingrid.oyoua@gmail.com</a>" },
-          { text: "Peux-tu partager ton LinkedIn ?", response: "Bien sûr ! Voici mon profil LinkedIn : <a href='https://www.linkedin.com/in/ingrid-oyoua-928b12353/' target='_blank'>Mon LinkedIn</a>." },
-          { text: "Peux-tu partager ton CV ?", response: "<a href='CV_Master_FR.pdf' target='_blank'>Clique ici pour voir mon CV</a>." }
-        ]
-      };
-
-      function showQuestions(category) {
-        chatbotMessages.innerHTML = "";
-        questions[category].forEach(q => {
-          let btn = document.createElement("button");
-          btn.classList.add("chatbot-btn");
-          btn.innerText = q.text;
-          btn.onclick = () => showResponse(q.response);
-          chatbotMessages.appendChild(btn);
-        });
-      }
-
-      function showResponse(response) {
-        chatbotMessages.innerHTML = `<p>${response}</p>`;
-      }
-
-      openChatbot.addEventListener("click", function() {
-        chatbotContainer.style.display = "block";
-        openChatbot.style.display = "none";
-      });
-
-      closeChatbot.addEventListener("click", function() {
-        chatbotContainer.style.display = "none";
-        openChatbot.style.display = "block";
-      });
-    });
-  </script>
+  <script src="chatbot.js"></script>
 
 </body>
 </html>
