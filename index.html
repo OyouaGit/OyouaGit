@@ -4,44 +4,101 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mon Portfolio</title>
-  <link rel="stylesheet" href="style.css"> <!-- Lien vers le fichier CSS -->
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <!-- Icônes FontAwesome -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <header>
-    <h1>Bienvenue sur mon site !</h1>
-    <p>Voici un site où vous pouvez retrouver mes projets scolaires comme extra-scolaire. Mais également mon CV.</p>
-  </header>
 
-  <nav>
-    <ul>
-      <li><a href="#cv">Mon CV</a></li>
-      <li><a href="#projets">Mes projets</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Mon Portfolio</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#about">À Propos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#cv">Mon CV</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projets">Projets</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
   </nav>
 
-  <section id="cv">
-    <h2>Mon CV</h2>
-    <!-- Lien vers le fichier PDF du CV -->
-    <p><a href="CV%20Master%20FR.pdf" target="_blank">Télécharger mon CV</a></p>
+  <!-- Header -->
+  <header class="hero">
+    <div class="container text-center text-white">
+      <h1 class="display-4">Bienvenue sur mon site !</h1>
+      <p class="lead">Étudiant en économie, passionné par l’analyse financière et la recherche.</p>
+    </div>
+  </header>
+
+  <!-- Section À Propos -->
+  <section id="about" class="container py-5">
+    <h2 class="text-center">À Propos de Moi</h2>
+    <div class="row justify-content-center">
+      <div class="col-md-6 text-center">
+        <p>Je suis étudiant en économie, passionné par l'analyse financière et les stratégies d'investissement. Ce site présente mes projets et mon parcours.</p>
+      </div>
+    </div>
   </section>
 
-  <section id="projets">
-    <h2>Mes projets</h2>
-    <!-- Lien vers le projet en analyse financière -->
-    <p><a href="Analyse%20financière%20AAP.html" target="_blank">Mon projet en analyse financière</a></p>
-    <!-- Lien vers le projet Dossier RF -->
-    <p><a href="DossierRF.html" target="_blank">Mon projet Dossier RF</a></p>
+  <!-- Section CV -->
+  <section id="cv" class="bg-light py-5 text-center">
+    <div class="container">
+      <h2>Mon CV</h2>
+      <a href="CV%20Master%20FR.pdf" class="btn btn-primary" target="_blank">
+        <i class="fas fa-download"></i> Télécharger mon CV
+      </a>
+    </div>
   </section>
 
-  <section id="contact">
+  <!-- Section Projets -->
+  <section id="projets" class="container py-5">
+    <h2 class="text-center">Mes Projets</h2>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-body text-center">
+            <h5 class="card-title">Analyse Financière</h5>
+            <p class="card-text">Projet d'analyse approfondie de performance financière.</p>
+            <a href="Analyse%20financière%20AAP.html" class="btn btn-outline-dark" target="_blank">Voir le projet</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-body text-center">
+            <h5 class="card-title">Dossier RF</h5>
+            <p class="card-text">Un dossier détaillé sur les régulations financières.</p>
+            <a href="DossierRF.html" class="btn btn-outline-dark" target="_blank">Voir le projet</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Contact -->
+  <section id="contact" class="bg-light py-5 text-center">
     <h2>Contact</h2>
-    <p>Vous pouvez me contacter par e-mail à : <a href="mailto:ingrid.oyoua@gmail.com">ingrid.oyoua@gmail.com</a></p>
+    <p>Vous pouvez me contacter par e-mail :</p>
+    <a href="mailto:ingrid.oyoua@gmail.com" class="btn btn-success">
+      <i class="fas fa-envelope"></i> Envoyer un e-mail
+    </a>
   </section>
 
-  <footer>
+  <!-- Footer -->
+  <footer class="text-center bg-dark text-white py-3">
     <p>Créé avec GitHub Pages</p>
   </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
 
