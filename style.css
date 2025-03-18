@@ -6,6 +6,7 @@ body {
 /* Hero Section */
 .hero {
   padding-top: 100px; 
+  margin-top: 70px;
   background: url('background.jpg') no-repeat center center/cover;
   height: 50vh;
   display: flex;
