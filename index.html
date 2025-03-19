@@ -6,7 +6,6 @@
   <title>Mon Portfolio</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -28,7 +27,7 @@
     </div>
   </nav>
 
-  <!-- Section Hero -->
+  <!-- Header -->
   <header class="hero">
     <div class="container text-center text-white">
       <h1 class="display-4">Bienvenue sur mon site !</h1>
@@ -42,38 +41,56 @@
     <p class="text-center">Je suis étudiant en économie, spécialisé en finance et économétrie. Mon site présente mes projets, analyses et expériences.</p>
   </section>
 
+  <!-- Section CV -->
+  <section id="cv" class="bg-light py-5 text-center">
+    <div class="container">
+      <h2>Mon CV</h2>
+      <a href="CV_Master_FR.pdf" class="btn btn-lg btn-primary mt-3" target="_blank">
+        <i class="fas fa-download"></i> Télécharger mon CV
+      </a>
+    </div>
+  </section>
+
   <!-- Section Projets -->
   <section id="projets" class="container py-5">
     <h2 class="text-center">Mes Projets</h2>
-    <p class="text-center">Découvrez mes travaux en analyse financière et en économie.</p>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-body text-center">
+            <h5 class="card-title">Analyse Financière</h5>
+            <p class="card-text">Projet d'analyse approfondie de performance financière.</p>
+            <a href="Analyse_financiere_AAPL.html" class="btn btn-outline-dark" target="_blank">Voir le projet</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-body text-center">
+            <h5 class="card-title">Dossier RF</h5>
+            <p class="card-text">Un dossier détaillé sur les régulations financières.</p>
+            <a href="DossierRF.html" class="btn btn-outline-dark" target="_blank">Voir le projet</a>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- Section Contact -->
-  <section id="contact" class="container py-5">
-    <h2 class="text-center">Contact</h2>
-    <p class="text-center">Vous pouvez me contacter par e-mail : <a href="mailto:ingrid.oyoua@gmail.com">ingrid.oyoua@gmail.com</a></p>
+  <section id="contact" class="bg-light py-5 text-center">
+    <h2>Contact</h2>
+    <p>Vous pouvez me contacter par e-mail :</p>
+    <a href="mailto:ingrid.oyoua@gmail.com" class="btn btn-success">
+      <i class="fas fa-envelope"></i> Envoyer un e-mail
+    </a>
   </section>
 
-  <!-- Chatbot -->
-  <div id="chatbot-container">
-    <div id="chatbot-header">
-      <p>💬 Pose-moi une question</p>
-      <button id="close-chatbot">✖</button>
-    </div>
-    <div id="chatbot-messages"></div>
-    <div id="chatbot-options">
-      <p>Choisissez une catégorie :</p>
-      <button class="chatbot-btn" onclick="showQuestions('etudes')">📚 Études & Compétences</button>
-      <button class="chatbot-btn" onclick="showQuestions('projets')">📊 Projets & Analyses</button>
-      <button class="chatbot-btn" onclick="showQuestions('contact')">📩 Contact & Liens</button>
-    </div>
-  </div>
+  <!-- Footer -->
+  <footer class="text-center bg-dark text-white py-3">
+    <p>Créé avec GitHub Pages</p>
+  </footer>
 
-  <!-- Bouton pour ouvrir le chatbot -->
-  <button id="open-chatbot">💬 Chat</button>
-
-  <!-- Script du chatbot -->
-  <script src="chatbot.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
