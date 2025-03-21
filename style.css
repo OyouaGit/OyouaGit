@@ -74,4 +74,10 @@ footer {
   border: 4px solid white;
   box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
+#certifications .list-group-item {
+  font-size: 1.1em;
+  background-color: transparent;
+  border: none;
+  padding: 10px 0;
+}
 
