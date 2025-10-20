@@ -3,24 +3,58 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mon Portfolio</title>
+  <title>Portfolio d'Ingrid Oyoua</title>
+  <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <!-- Font Awesome (pour les icônes) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <!-- Votre CSS personnalisé -->
+  <style>
+    body {
+      padding-top: 56px; /* Pour compenser la barre de navigation fixe */
+    }
+    .custom-banner {
+      background-color: #f8f9fa;
+      padding: 4rem 0;
+    }
+    .profile-pic {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 5px solid #fff;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+    .card {
+      margin-bottom: 1.5rem;
+      border: 1px solid #e9ecef;
+      transition: transform 0.2s;
+    }
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+    section {
+      scroll-margin-top: 60px; /* Ancrage fluide avec la navbar */
+    }
+  </style>
 </head>
 <body>
 
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="#">Mon Portfolio</a>
+      <a class="navbar-brand" href="#">Ingrid Oyoua</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="#about">À Propos</a></li>
-          <li class="nav-item"><a class="nav-link" href="#cv">Mon CV</a></li>
+          <li class="nav-item"><a class="nav-link" href="#experience">Expérience</a></li>
           <li class="nav-item"><a class="nav-link" href="#projets">Projets</a></li>
+          <li class="nav-item"><a class="nav-link" href="#certifications">Certifications</a></li>
+          <li class="nav-item"><a class="nav-link" href="#cv">CV</a></li>
+          <li class="nav-item"><a class="nav-link" href="#interets">Centres d'intérêt</a></li>
           <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
         </ul>
       </div>
@@ -28,39 +62,63 @@
   </nav>
 
   <!-- Header -->
-<header class="custom-banner">
-  <div class="container text-center">
-    <img src="profils.jpg" alt="Photo de profil" class="profile-pic">
-    <h1 class="display-4 mt-3">Ingrid Oyoua</h1>
-      <p class="lead">Je me présente Ingrid Oyoua, étudiante à l’Université de Tours en licence d’économie. Vous retrouverez sur cette page web tous mes projets, qu’ils soient scolaires ou extra-scolaires.</p>
+  <header class="custom-banner">
+    <div class="container text-center">
+      <!-- Assurez-vous que le chemin vers votre image est correct -->
+      <img src="profils.jpg" alt="Photo de profil" class="profile-pic">
+      <h1 class="display-4 mt-3">Ingrid Oyoua</h1>
+      <p class="lead">Étudiante en Master 1 Monnaie, Banque, Finance, Assurance (MBFA) à l'Université de Rennes, spécialisée dans le secteur bancaire et financier. </p>
     </div>
   </header>
 
-  <!-- Section À Propos -->
-  <section id="about" class="container py-5">
-    <h2 class="text-center">À Propos de Moi</h2>
-    <p class="text-center">Étudiante en Master 1 MBFA à l'Université de Rennes, spécialisée dans le secteur banciare et financier.</p>
-  </section>
-
-  <!-- Section CV -->
-  <section id="cv" class="bg-light py-5 text-center">
+  <!-- Section Expérience -->
+  <section id="experience" class="bg-light py-5">
     <div class="container">
-      <h2>Mon CV</h2>
-      <a href="CV_Master_FR.pdf" class="btn btn-lg btn-primary mt-3" target="_blank">
-        <i class="fas fa-download"></i> Télécharger mon CV
-      </a>
+      <h2 class="text-center mb-4">Expériences Professionnelles</h2>
+      <div class="row">
+        <!-- Expérience 1 -->
+        <div class="col-md-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Professeur particulier</h5>
+              <h6 class="card-subtitle mb-2 text-muted"> | En ligne | </h6>
+              <p class="card-text">Cours particuliers en physique/chimie, mathématiques appliquées et économie. Aide aux élèves à structurer leur raisonnement analytique</p>
+            </div>
+          </div>
+        </div>
+        <!-- Expérience 2 -->
+        <div class="col-md-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Monitrice d'atelier</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Fondation ANAIS | Mettray | Juillet - Août 2025</h6>
+              <p class="card-text">Former, animer et encadrer l’équipe des travailleurs. Assurer le suivi de production.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Expérience 3 -->
+        <div class="col-md-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">ASH</h5>
+              <h6 class="card-subtitle mb-2 text-muted"> CHRU de Tours | Tours | Juillet - Août 2023 </h6>
+              <p class="card-text"> Gestion logistique en milieu hospitalier. Travail en équipe et rigueur dans un environnement exigeant.</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- Section Projets -->
   <section id="projets" class="container py-5">
-    <h2 class="text-center">Mes Projets</h2>
+    <h2 class="text-center mb-4">Mes Projets</h2>
     <div class="row">
       <div class="col-md-6">
         <div class="card">
           <div class="card-body text-center">
             <h5 class="card-title">Analyse Financière</h5>
-            <p class="card-text">Projet d'analyse approfondie de performance financière, grâce à des instruments financiers</p>
+            <p class="card-text">Projet d'analyse approfondie de la performance financière d'Apple (AAPL) grâce à des instruments financiers.</p>
             <a href="Analyse_financiere_AAPL.html" class="btn btn-outline-dark" target="_blank">Voir le projet</a>
           </div>
         </div>
@@ -68,47 +126,88 @@
       <div class="col-md-6">
         <div class="card">
           <div class="card-body text-center">
-            <h5 class="card-title">Dossier RF</h5>
-            <p class="card-text">Un dossier analysant grâce à Rstudio,les comportements électoraux lors du premier tour de l’élection présidentielle française de 2022, en mettant en lumière l’influence de la taille des communes sur la participation et les préférences électorales..</p>
+            <h5 class="card-title">Analyse de données électorales avec R</h5>
+            <p class="card-text">Dossier analysant l'influence de la taille des communes sur la participation et les votes au premier tour de l'élection présidentielle de 2022.</p>
             <a href="DossierRF.html" class="btn btn-outline-dark" target="_blank">Voir le projet</a>
           </div>
         </div>
       </div>
     </div>
   </section>
-<section id="certifications" class="container py-5">
-  <h2 class="text-center mb-4">Mes Certifications</h2>
-  <div class="row justify-content-center">
-    <div class="col-md-8">
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">✔️ Software Engineering Job Simulation (Goldman Sachs)</li>
-        <li class="list-group-item">✔️ Certification Markets Sales & Trading (Citi)</li>
-        <li class="list-group-item">✔️ Python for Finance: Investment Fundamentals & Data Analytics (Coursera)</li>
-      </ul>
+
+  <!-- Section Certifications -->
+  <section id="certifications" class="bg-light py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">Mes Certifications</h2>
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <ul class="list-group list-group-flush shadow-sm">
+            <li class="list-group-item"><i class="fas fa-award me-2 text-primary"></i>Software Engineering Job Simulation (Goldman Sachs)</li>
+            <li class="list-group-item"><i class="fas fa-award me-2 text-primary"></i>Certification Markets Sales & Trading (Citi)</li>
+            <li class="list-group-item"><i class="fas fa-award me-2 text-primary"></i>Python for Finance: Investment Fundamentals & Data Analytics (Coursera)</li>
+          </ul>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+  
+  <!-- Section CV -->
+  <section id="cv" class="py-5 text-center">
+    <div class="container">
+      <h2>Mon CV</h2>
+      <p class="mt-3">Pour plus de détails sur mon parcours, téléchargez mon CV au format PDF.</p>
+      <!-- Assurez-vous que le chemin vers votre CV est correct -->
+      <a href="CV_Master_FR.pdf" class="btn btn-lg btn-primary mt-3" target="_blank">
+        <i class="fas fa-download"></i> Télécharger mon CV
+      </a>
+    </div>
+  </section>
+
+  <!-- Section Centres d'intérêt -->
+  <section id="interets" class="bg-light py-5">
+    <div class="container text-center">
+      <h2 class="mb-4">Centres d'Intérêt</h2>
+      <div class="row">
+        <div class="col-md-3 mb-3">
+          <h4><i class="fas fa-hand-fist d-block mb-2"></i>Sport</h4>
+          <p>Handball depuis 10 ans, dont 6 ans en compétition.</p>
+        </div>
+        <div class="col-md-3 mb-3">
+          <h4><i class="fas fa-chart-line d-block mb-2"></i>Marchés Financiers</h4>
+          <p>Suivre l'actualité économique et les tendances d'investissement.</p>
+        </div>
+        <div class="col-md-3 mb-3">
+          <h4><i class="fas fa-plane-departure d-block mb-2"></i>Voyages</h4>
+          <p>Découvrir de nouvelles cultures et perspectives.</p>
+        </div>
+        <div class="col-md-3 mb-3">
+          <h4><i class="fas fa-book-open d-block mb-2"></i>Lecture</h4>
+          <p>Lectures sur l'économie, la finance et le développement personnel.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Section Contact -->
-  <section id="contact" class="bg-light py-5 text-center">
-    <h2>Contact</h2>
-    <p>Vous pouvez me contacter par e-mail :</p>
-    <a href="mailto:ingrid.oyoua@gmail.com" class="btn btn-success">
-      <i class="fas fa-envelope"></i> Envoyer un e-mail
-    </a>
+  <section id="contact" class="py-5 text-center">
+    <div class="container">
+      <h2>Contact</h2>
+      <p>Vous pouvez me contacter par e-mail ou via mon profil LinkedIn :</p>
+      <a href="mailto:ingrid.oyoua@gmail.com" class="btn btn-success me-2">
+        <i class="fas fa-envelope"></i> Envoyer un e-mail
+      </a>
+      <a href="https://www.linkedin.com/in/ingrid-oyoua-928b12353/" target="_blank" class="btn btn-outline-primary">
+        <i class="fab fa-linkedin"></i> Voir mon profil LinkedIn
+      </a>
+    </div>
   </section>
-<p class="mt-3">
-  <a href="https://www.linkedin.com/in/ingrid-oyoua-928b12353/" target="_blank" class="btn btn-outline-primary">
-    <i class="fab fa-linkedin"></i> Voir mon profil LinkedIn
-  </a>
-</p>
 
   <!-- Footer -->
   <footer class="text-center bg-dark text-white py-3">
-    <p>Créé avec GitHub Pages</p>
+    <p class="mb-0">&copy; 2025 Ingrid Oyoua - Créé avec GitHub Pages</p>
   </footer>
-  
 
+  <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
